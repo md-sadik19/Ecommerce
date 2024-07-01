@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        </style>
+</head>
+<body>
+    <h2>Contact Table</h2>
+
+    <table>
+    <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Age</th>
+        <th>Address</th>
+        <th>Created_at</th>
+    </tr>
+    {% for contact in contacts %}  
+    <tr> 
+        <td><a href="{% url 'detail' contact.id %}"> {{ contact.name }}</td></a>
+        <td>{{ contact.phone }}</td>
+        <td>{{ contact.age }}</td>
+        <td>{{ contact.address }}</td>
+        <td>{{contact.created_at}}</td>
+    </tr>
+    {% endfor %}
+    </table>
+
+</body>
+</html>

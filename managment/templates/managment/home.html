@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Managment Home</h1>
+
+    <ul>
+        {% for p in p %}
+        <li> {{p}} </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'contacts' %}">GO to contact pag</a>
+</body>
+</html>
+
+
+
+
+
