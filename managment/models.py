@@ -7,6 +7,7 @@ class Contact(models.Model):
     phone =models.CharField(max_length=11)
     age = models.IntegerField()
     address =models.TextField(max_length=120)
+    slug = models.SlugField(blank=True, null=True)
     is_active = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     
@@ -25,3 +26,8 @@ class Spess(models.Model):
 
     def __str__(self):
         return f"{self.name} | {self.age}"
+    
+
+    def save(self, *args, **kwargs):
+        self.s = slugify(self.name)
+        super(Contact, self).save(*args, **kwargs)

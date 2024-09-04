@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add Contact</h1>
+
+    {% if messages %}
+    {% include 'message.html' %}
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Name</label><br>
+        <input type="text" name="name" placeholder="Name"><br>
+
+        <label for="name">Phone</label><br>
+        <input type="text" name="phone" placeholder="phone"><br>
+
+        <label for="name">Age</label><br>
+        <input type="text" name="age" placeholder="age"><br>
+
+        <label for="name">Address</label><br>
+        <input type="text" name="address" placeholder="address"><br>
+        <br>
+        <input type="submit" value="Add_contact">
+</body>
+</html>
